@@ -1,9 +1,8 @@
-<%= form_for @conn, "/", [as: :messages, method: :get], fn f ->  %>
+<%= form_for @conn, page_path(@conn, :create), [as: :pages], fn f ->  %>
 <div class="form-group">
   <%= text_input f, :username, class: "form-control", placeholder: "Username" %>
 </div>
-
-<button type="submit" class="btn btn-primary">Submit</button>
+<%= submit "Submit", class: "btn btn-primary" %>
 <% end %>
 
 <div class="row marketing">

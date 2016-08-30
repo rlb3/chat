@@ -16,7 +16,9 @@ defmodule Chat.Router do
   scope "/", Chat do
     pipe_through :browser # Use the default browser stack
 
-    get "/", PageController, :index
+    get "/", PageController, :new
+    resources "/pages", PageController, only: [:new, :create]
+    resources "/messages", MessageController, only: [:index]
   end
 
   # Other scopes may use custom stacks.

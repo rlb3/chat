@@ -1,0 +1,48 @@
+﻿<div class="row " style="padding-top:40px;">
+  <div class="col-md-8">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        RECENT CHAT HISTORY
+      </div>
+      <div class="panel-body">
+        <ul id="messages" class="media-list">
+          <%= for message <- @messages do %>
+          <li class="media">
+            <div class="media-body">
+              <div class="media">
+                <a class="pull-left" href="#">
+                  <!-- <img class="media-object img-circle " src="assets/img/user.png" /> -->
+                </a>
+                <div class="media-body" >
+                  <%= message.body %>
+                  <br />
+                  <small class="text-muted"><%= message.username %> | <%= message.inserted_at %></small>
+                  <hr />
+                </div>
+              </div>
+            </div>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="panel-footer">
+        <div class="input-group">
+          <input type="text" id="new_message" class="form-control" placeholder="Enter Message" />
+          <span class="input-group-btn">
+            <button id="send" class="btn btn-info" type="button">SEND</button>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        ONLINE USERS
+      </div>
+      <div class="panel-body">
+        <ul id="users" class="media-list"></ul>
+      </div>
+    </div>
+  </div>
+</div>

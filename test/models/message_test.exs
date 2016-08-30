@@ -3,7 +3,7 @@ defmodule Chat.MessageTest do
 
   alias Chat.Message
 
-  @valid_attrs %{body: "some content", chanel: "some content", username: "some content"}
+  @valid_attrs %{body: "some content", channel: "some content", username: "some content"}
   @invalid_attrs %{}
 
   test "changeset with valid attributes" do
